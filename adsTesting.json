@@ -1,0 +1,142 @@
+[
+    {
+        "id": "ModuleManager",
+        "cfg": {
+            "cdn": "//inhabitmainlive.akamaized.net/modulerepository"
+        }
+    },
+    {
+        "id": "application",
+        "cfg": {
+            "cacheTimeSec": "300",
+            "cdnUrl": ""
+        }
+    },
+    {
+        "id": "adVideo",
+        "cfg": {
+            "enabled": true,
+            "adUnit": "housead-inhabit",
+            "adUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=",
+            "connector": "outstreamDFP",
+            "mobile": true
+        }
+    },
+    {
+        "id": "adDisplay",
+        "cfg": {
+            "enabled": true
+        }
+    },
+    {
+        "id": "textClassificationService",
+        "cfg": {
+            "providers": [
+                {
+                    "id": "indico",
+                    "url": "//semantic-inhabit.as.arkadiumhosted.com/api/tags/indico"
+                },
+                {
+                    "id": "watson",
+                    "url": "//semantic-inhabit.as.arkadiumhosted.com/api/watson",
+                    "mode": "uri",
+                    "prefetchMethods": [
+                    ]
+                }
+            ],
+            "apiKey": "c5c9af4c-539a-4e93-9c55-db17236033b0"
+        }
+    },
+    {
+        "id": "widget",
+        "cfg": [
+            {
+                "id": "widget",
+                "cfg": {
+                }
+            }
+        ]
+    },
+    {
+        "id": "ga",
+        "cfg": {
+            "id": "UA-70970352-1",
+            "sample": 1,
+            "enabled": false
+        }
+    },
+    {
+        "id": "googleTag",
+        "cfg": {
+            "id": "GTM-P6ZZ7X",
+            "sample": 1,
+            "enabled": true
+        }
+    },
+    {
+        "id": "appInsight",
+        "cfg": {
+            "enabled": false,
+            "instrumentationKey": "93350af6-c237-44cc-853d-c5715c40b0ad"
+        }
+    },
+    {
+        "id": "contentPresenter",
+        "cfg": [
+            {
+                "id": "inWidget",
+                "cfg": {
+                    "test": {
+                        "abTest": "test",
+                        "experiment": [
+                            [
+                                "1",
+                                0.5
+                            ],
+                            [
+                                "2",
+                                0.5
+                            ]
+                        ]
+                    },
+                    "ads": {
+                        "bottom": [
+                            {
+                                "event": "module.moduleReady",
+                                "ads": [
+                                    {
+                                        "type":"display",
+                                        "limit": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "event": "module.moduleCycleStart",
+                                "ads": [
+                                    {
+                                        "type":"video",
+                                        "limit": 1,
+                                        "backfill": true
+                                    },
+                                    {
+                                        "type":"display",
+                                        "limit": 100
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "pendingTimeout": "5000",
+                    "modules": [
+                        {
+                            "id": "nbaguesser",
+                            "deliveryMethod": "random",
+                            "theme": "light",
+                            "v": "1.99"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
